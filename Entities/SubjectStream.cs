@@ -6,10 +6,16 @@ namespace WebApplicationTraining3.Entities
     {
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
-        public string Id { get; set; }
+        public string ObjectId { get; set; }
+
+        [BsonElement("id")]
+        public int Id { get; set; }
 
         [BsonElement("name")]
         public string Name { get; set; }
+
+        [BsonElement("prefix")]
+        public string Prefix { get; set; }
 
     }
 }
