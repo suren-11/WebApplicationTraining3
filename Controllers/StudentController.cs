@@ -26,7 +26,7 @@ namespace WebApplicationTraining3.Controllers
         [HttpPost]
         public async Task<IActionResult> PostStudent([FromBody] Student student)
         {
-
+            Console.WriteLine("helloooooo");
             if (student == null)
             {
                 return BadRequest("Student is Empty");
@@ -36,7 +36,8 @@ namespace WebApplicationTraining3.Controllers
 
             if (success)
             {
-                return Ok($"{student.FirstName} Saved Sucessfully");
+                return Ok(new { message = "Student saved successfully", studentId = student.Id });
+
             }
             else
             {
